@@ -1,0 +1,12 @@
+|            polecenie             |  |     Gdzie jesteś?     |  |                    Co robi / oczekiwany wynik                    |  |            Jak sprawdzić ?                     |
+| git clone URL	                   |  | Katalog nadrzędny     |  | Pobiera repo i tworzy jego katalog.                              |  | Wejdź do katalogu, uruchom git status.         |
+| git switch main                  |  | Dowolny czysty branch |  | Przełącza na main.	                                            |  |git branch pokazuje * main.                     |
+| git pull --ff-only origin main   |  | main	              |  | Pobiera aktualny main bez automatycznego merge commita.          |  | git status pokazuje zgodność z origin/main.    |
+| git switch -c feature/nazwa      |  | Aktualny main	      |  | Tworzy branch i od razu na niego przełącza.                      |  | git branch oznacza nową nazwę gwiazdką.        |
+| git status	                   |  | Dowolny branch        |  | Pokazuje branch oraz pliki zmienione i przygotowane.             |  | Sam wynik jest weryfikacją.                    |
+| git add .	                   |  | Branch roboczy        |  | Przygotowuje wszystkie zmiany w bieżącym katalogu.               |  | git status pokazuje „changes to be committed”. |
+| git commit -m "docs: ..."	   |  | Branch roboczy        |  | Tworzy lokalny zapis przygotowanych zmian.                       |  | git log --oneline -3.                          |
+| git push -u origin feature/nazwa |  | Nowy branch roboczy   |  | Publikuje branch i ustawia śledzenie.	                    |  | Branch jest widoczny na GitHubie.              |
+| git push                         |  | Opublikowany branch   |  | Wysyła kolejne commity, aktualizując otwarty PR.                 |  | Commit pojawia się w karcie Commits PR-u.      |
+| git fetch origin	           |  | Branch roboczy        |  | Pobiera informacje o zdalnych zmianach bez modyfikowania plików. |  | git log --oneline origin/main -3.              |
+| git merge origin/main            |  | Branch roboczy PR-u   |  | Włącza aktualny zdalny main; może ujawnić konflikt.              |  | git status i git log --oneline.                |
