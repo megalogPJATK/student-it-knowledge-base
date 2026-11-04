@@ -12,9 +12,6 @@
   </header>
   <main>
     <p>Ściągi z przedmiotów informatycznych.</p>
-    <ul class="topic-list">
-        <li><strong><a href="../index.html">Main strona</a>
-    </ul>
     <div class="table-scroll">
         <table class="command-table">
             <caption>Podstawowe polecenia Git</caption>
@@ -22,11 +19,23 @@
             <tr><th>Polecenie</th><th>Gdzie jesteś?</th><th>Co robi/oczekiwany wynik</th><th>Jak sprawdzić?</th></tr>
         </thead>
         <tbody>
-            <tr><td><code>git status</code></td><td>Pokazuje stan repozytorium.</td><td>Pokazuje stan repozytorium.</td><td>Pokazuje stan repozytorium.</td></tr>
-            <tr><td><code>git log</code></td><td>Wyświetla historię commitów.</td></tr>
+            <tr><td><code>git clone URL</code></td><td>Katalog nadrzędny</td><td>Pobiera repo i tworzy jego katalog.</td><td>Wejdź do katalogu, uruchom git status.</td></tr>
+            <tr><td><code>git switch main</code></td><td>Dowolny czysty branch</td><td></td><td>Przełącza na main.</td></tr>
+            <tr><td><code>git pull --ff-only origin main</code></td><td>main</td><td>Pobiera aktualny main bez automatycznego merge commita.</td><td>git status pokazuje zgodność z origin/main.</td></tr>
+            <tr><td><code>git switch -c feature/nazwa</code></td><td>Aktualny main</td><td>Tworzy branch i od razu na niego przełącza.</td><td>git branch oznacza nową nazwę gwiazdką.</td></tr>
+            <tr><td><code>git status</code></td><td>Dowolny branch</td><td>Pokazuje branch oraz pliki zmienione i przygotowane.</td><td>Sam wynik jest weryfikacją.</td></tr>
+            <tr><td><code>git add .</code></td><td>Branch roboczy</td><td>Przygotowuje wszystkie zmiany w bieżącym katalogu.</td><td>git status pokazuje „changes to be committed”.</td></tr>
+            <tr><td><code>git commit -m "docs: ..."</code></td><td>Branch roboczy</td><td>Tworzy lokalny zapis przygotowanych zmian.</td><td>git log --oneline -3.</td></tr>
+            <tr><td><code>git push -u origin feature/nazwa</code></td><td>Nowy branch roboczy</td><td>Publikuje branch i ustawia śledzenie.</td><td>Branch jest widoczny na GitHubie.</td></tr>
+            <tr><td><code>git push</code></td><td>Opublikowany branch</td><td>Wysyła kolejne commity, aktualizując otwarty PR.</td><td>Commit pojawia się w karcie Commits PR-u.</td></tr>
+            <tr><td><code>git fetch origin</code></td><td>Branch roboczy</td><td>Pobiera informacje o zdalnych zmianach bez modyfikowania plików.</td><td>git log --oneline origin/main -3.</td></tr>
+            <tr><td><code>git merge origin/main</code></td><td>Branch roboczy PR-u</td><td>Włącza aktualny zdalny main; może ujawnić konflikt.</td><td>git status i git log --oneline.</td></tr>
         </tbody>
-  </table>
-</div>
+        </table>
+      <ul class="topic-list">
+        <li><strong><a href="../index.html">Main strona</a></strong> — Powrót do strony głównej</li>
+        </ul>
+    </div>
   </main>
 </body>
 </html>
